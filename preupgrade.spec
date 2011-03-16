@@ -1,6 +1,6 @@
 Summary: Prepares a system for an upgrade
 Name: preupgrade
-Version: 1.1.8
+Version: 1.1.9
 Release: 1%{?dist}
 License: GPLv2+
 Source: https://fedorahosted.org/releases/p/r/preupgrade/%{name}-%{version}.tar.bz2
@@ -45,7 +45,7 @@ install -m 0644 %{SOURCE1} $RPM_BUILD_ROOT/usr/share/preupgrade/releases.list
 %files -f %{name}.lang
 %defattr(-, root, root)
 %dir %{_datadir}/%{name}
-%doc ChangeLog README COPYING data/releases.txt
+%doc ChangeLog README COPYING
 %config(noreplace) %{_sysconfdir}/pam.d/*
 %config(noreplace) %{_sysconfdir}/security/console.apps/*
 %{_datadir}/%{name}/*
@@ -56,6 +56,9 @@ install -m 0644 %{SOURCE1} $RPM_BUILD_ROOT/usr/share/preupgrade/releases.list
 %{python_sitelib}/%{name}
 
 %changelog
+* Tue Mar 15 2011 Richard Hughes <richard@hughsie.com> - 1.1.9-1
+- New upstream release.
+
 * Thu Sep 09 2010 Richard Hughes <richard@hughsie.com> - 1.1.8-1
 - New upstream release.
 - Reinvigorate pre-upgrade-cli with the same fixes as the gui tool.
